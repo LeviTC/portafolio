@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "panda codegen && next dev",
+    "build": "panda codegen && next build",
     "start": "next start",
     "lint": "eslint"
   },
