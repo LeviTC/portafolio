@@ -10,11 +10,11 @@ const navLinkStyle = css({
   cursor: "pointer",
   color: "white",
   transition: "color 0.3s ease",
-  _hover: { color: "#EB4A4A" },
+  _hover: { color: "primary" },
 })
 
 const activeLinkStyle = css({
-  color: "#EB4A4A",
+  color: "primary",
 })
 
 export default function Navbar() {

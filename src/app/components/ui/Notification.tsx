@@ -40,7 +40,7 @@ export default function Notification({ show, message = "Copied to clipboard" }: 
             justifyContent: "center",
             width: "20px",
             height: "20px",
-            color: "#EB4A4A",
+            color: "primary",
             fontSize: "12px",
           })}>
             ✓

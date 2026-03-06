@@ -9,7 +9,7 @@ const contactStyle = css({
   cursor: "pointer",
   transition: "color 0.3s ease",
   position: "relative",
-  _hover: { color: "#EB4A4A" },
+  _hover: { color: "primary" },
 })
 
 export default function Contact() {

@@ -40,7 +40,7 @@ export default function Hero() {
               fontWeight: "300",
               textAlign: "start",
               mt: 1,
-              color: "#eb4a4a"
+              color: "primary"
             })}
           >
             Software Developer

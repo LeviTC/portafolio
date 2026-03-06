@@ -18,7 +18,7 @@ const buttonStyles = cva({
   variants: {
     variant: {
       primary: {
-        backgroundColor: "#EB4A4A",
+        backgroundColor: "primary",
         color: "white",
         _hover: {
           backgroundColor: "black",
