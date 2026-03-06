@@ -9,6 +9,7 @@ export default defineConfig({
       tokens: {
         colors: {
           primary: { value: "#EB4A4A" },
+          secondary: { value: "#969696" },
         },
       },
     },

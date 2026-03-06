@@ -106,7 +106,7 @@ export default function ProjectCard({
 
         <p
           className={css({
-            color: "#969696",
+            color: "secondary",
           })}
         >
           {description}
@@ -125,7 +125,7 @@ export default function ProjectCard({
         {/* {bullets?.length && (
           <ul className={css({ paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "6px" })}>
             {bullets.map((item, index) => (
-              <li key={index} className={css({ listStyleType: "disc", color: "#969696" })}>
+              <li key={index} className={css({ listStyleType: "disc", color: "secondary" })}>
                 {item}
               </li>
             ))}

@@ -52,7 +52,7 @@ export default function Hero() {
         className={css({
           width: "60%",
           mt: "10px",
-          color: "#969696",
+          color: "secondary",
           lineHeight: "1.8",
         })}
       >
