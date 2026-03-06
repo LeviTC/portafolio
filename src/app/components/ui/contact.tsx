@@ -23,7 +23,7 @@ export default function Contact() {
 
   return (
     <>
-      <Notification show={true} />
+      <Notification show={show} />
         <div className={css({ display: "flex", mt: "50px", gap: "100px", color: "white"})}>
           <p className={contactStyle} onClick={() => handleCopy("+522227448864")}>
             (+52) 222 744 8864
