@@ -2,52 +2,47 @@
 import { PROFESSIONAL_PROJECTS } from "@/data/porfessional-projects";
 import { css } from "../../../../styled-system/css";
 import ProjectCard from "../ui/ProjectCard";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   const projectsToDisplay = showAll 
     ? PROFESSIONAL_PROJECTS 
     : PROFESSIONAL_PROJECTS.slice(0, 6);
 
-    const handleToggle = () => {
-      if (showAll) {
-        const el = sectionRef.current;
-        if (!el) return;
-        
-        const offset = 150;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-      setShowAll(!showAll);
+  const handleToggle = () => {
+    if (showAll) {
+      const el = document.getElementById("projects");
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({ top, behavior: "smooth" });
     }
+    setShowAll(!showAll);
+  }
 
   return (
     <section
       id="projects"
-      ref={sectionRef}
       className={css({
         width: "75%",
         maxWidth: "1500px",
         margin: "auto",
-        mt: "200px",
         display: "flex",
         flexDirection: "column",
         gap: "30px",
         alignItems: "center",
       })}
     >
-      <h3 className={css({ fontSize: "28px" })}>
+      <h3 className={css({ fontSize: "40px" })}>
         Professional projects
       </h3>
 
       <div
         className={css({
-          mt: "20px",
+          mt: "50px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: "30px",

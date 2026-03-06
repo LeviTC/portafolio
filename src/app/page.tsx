@@ -12,7 +12,8 @@ export default function Page() {
         flexDirection: "column",
         backgroundColor: "#000000",
         color: "white",
-        mb: "50px"
+        mb: "50px",
+        gap: "200px",
       })}
     >
       <Navbar />
