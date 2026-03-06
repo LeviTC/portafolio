@@ -39,7 +39,6 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
     description: "Developed and maintained multiple core modules for an ERP system used for warehouse and order management.",
     technologies: ["React", "TypeScript, Vite, Zustand, Redux"],
     imagePath: "/blife-checkout.png",
-    // urlSite: "https://secure.blife.mx/",
   },
   {
     title: "Blife Armado (App)",
