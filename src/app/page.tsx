@@ -1,7 +1,27 @@
-import Home from "./components/sections/Home";
+import { css } from "../../styled-system/css";
+import Experience from "./components/sections/Experience";
+import Hero from "./components/sections/Hero";
+import Projects from "./components/sections/Projects";
+import Navbar from "./components/ui/Navbar";
 
 export default function Page() {
   return (
-    <Home />
+    <main
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#000000",
+        color: "white",
+        mb: "50px"
+      })}
+    >
+      <Navbar />
+
+      <Hero />
+
+      <Projects />
+      {/* <Experience /> */}
+
+    </main>
   );
 }
