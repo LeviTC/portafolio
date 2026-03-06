@@ -2,6 +2,7 @@ import Image from "next/image";
 import { css } from "../../../../styled-system/css";
 import { Project } from "@/types/project";
 import Button from "./Button";
+import Badge from "./badge";
 
 
 export default function ProjectCard({
@@ -17,8 +18,9 @@ export default function ProjectCard({
     className={css({
       position: "relative",
       padding: "16px",
-      py: "40px",
+      py: "30px",
       // height: "350px",
+      width: "360px",
       display: "flex",
       flexDirection: "column", 
       justifyContent: "space-between",
@@ -55,6 +57,7 @@ export default function ProjectCard({
       _hover: {
         transform: "scale(0.97)",
         transition: "transform 0.3s ease",
+        cursor: "pointer",
       },
     })}
     >
@@ -84,34 +87,28 @@ export default function ProjectCard({
           gap: "8px",
         })}
       >
+        <h4 className={css({ fontSize: "20px", fontWeight: "500", })}>
+          {title}
+        </h4>
 
-        <div 
-          className={css({
-            display: "flex",
-            // justifyContent: "center"
-            alignContent: "center",
-            alignItems: "center",
-            gap: "20px"
-          })}
-        >
-          <h4
-            className={css({
-              fontSize: "20px",
-              fontWeight: "500",
-            })}
-          >
-            {title}
-          </h4>
-        </div>
-
-        <p
-          className={css({
-            color: "secondary",
-          })}
-        >
+        <p className={css({ color: "secondary", })} >
           {description}
         </p>
-
+        
+        {technologies?.length && (
+          <div
+            className={css({
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "5px",
+              mt: "15px",
+            })}
+          >
+            {technologies.map(tech => (
+              <Badge key={tech} text={tech} />
+            ))}
+          </div>
+        )}
         {/* {urlSite && (
             <Button 
               variant="outline" 

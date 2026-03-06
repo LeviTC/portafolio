@@ -10,6 +10,7 @@ export default defineConfig({
         colors: {
           primary: { value: "#EB4A4A" },
           secondary: { value: "#969696" },
+          tertiary: { value: "#151515"}
         },
       },
     },
