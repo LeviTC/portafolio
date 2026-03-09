@@ -5,6 +5,7 @@ import GithubIcon from "./icons/Github";
 import Button from "./Button";
 import { useEffect, useState } from "react";
 import { cx } from "../../../../styled-system/css";
+import { HERO_SECTIONS } from "@/data/hero-sections";
 
 const navLinkStyle = css({
   cursor: "pointer",
@@ -22,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "projects", "experience"];
+      const sections = HERO_SECTIONS;
       
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -37,7 +38,6 @@ export default function Navbar() {
       }
     }
   
-    // ejecutar al inicio para setear la sección correcta
     handleScroll();
   
     window.addEventListener("scroll", handleScroll);
@@ -48,9 +48,13 @@ export default function Navbar() {
     const el = document.getElementById(id);
     if (!el) return;
     
-    const offset = 150; // altura del navbar + espacio extra
+    const offset = 150;
     const top = el.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
+  }
+
+  const handleIconClick = (url: string) => {
+    window.open(url);
   }
 
   return (
@@ -72,7 +76,7 @@ export default function Navbar() {
       })}
     >
       <div className={css({ display: "flex", gap: "30px" })}>
-        {["hero", "projects", "experience"].map((section) => (
+        {HERO_SECTIONS.map((section) => (
           <div
             key={section}
             onClick={() => scrollTo(section)}
@@ -84,8 +88,14 @@ export default function Navbar() {
       </div>
 
       <div className={css({ display: "flex", gap: "20px", alignItems: "center" })}>
-        <GithubIcon className={navLinkStyle} size={20} />
-        <LinkedinIcon className={navLinkStyle} size={20} />
+        <GithubIcon 
+          className={navLinkStyle} 
+          onClick={() => handleIconClick("https://github.com/LeviTC")}
+        />
+        <LinkedinIcon
+          className={navLinkStyle} 
+          onClick={() => handleIconClick("https://www.linkedin.com/in/erletaco")}  
+        />
         <Button size="sm">Download CV</Button>
       </div>
     </div>
