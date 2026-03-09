@@ -100,7 +100,7 @@ export default function Navbar() {
           href="/erick_tamariz_frontend_developer-cv-es.pdf" 
           size="sm"
         >
-          Download CV
+          Get resume
         </Button>
       </div>
     </div>
