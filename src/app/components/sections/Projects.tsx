@@ -7,6 +7,7 @@ import Button from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectModal from "../ui/project-modal";
 import { Project } from "@/types/project";
+import Section from "../ui/section";
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
@@ -40,25 +41,9 @@ export default function Projects() {
 
   return (
     <>
-      <section
-        id="projects"
-        className={css({
-          width: "75%",
-          maxWidth: "1500px",
-          margin: "auto",
-          display: "flex",
-          flexDirection: "column",
-          gap: "30px",
-          alignItems: "center",
-        })}
-      >
-        <h3 className={css({ fontSize: "40px" })}>
-          Professional projects
-        </h3>
-
+      <Section id="projects" title="Professional projects" >
         <div
           className={css({
-            mt: "50px",
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: "30px",
@@ -82,13 +67,15 @@ export default function Projects() {
           </AnimatePresence>
         </div>
 
-        <Button
-          className={css({ width: "200px" })}
-          onClick={handleToggle}
-        >
-          {showAll ? "Show less" : "View all"}
-        </Button>
-      </section>
+        <div className={css({display: "flex", justifyContent: "center", mt: "30px"})}>
+          <Button
+            className={css({ width: "200px" })}
+            onClick={handleToggle}
+          >
+            {showAll ? "Show less" : "View all"}
+          </Button>
+        </div>
+      </Section>
 
       <ProjectModal open={openModal} onClose={handleCloseModal} project={selectedProject}/>
     </>

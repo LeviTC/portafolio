@@ -43,7 +43,7 @@ export default function Hero() {
               color: "primary"
             })}
           >
-            Software Developer
+            Front-End Developer
           </h2>
         </div>
       </div>

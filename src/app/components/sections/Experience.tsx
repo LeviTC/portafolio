@@ -1,25 +1,30 @@
+import { EXPERIENCE_DATA } from "@/data/experience";
+import ExperienceCard from "../ui/experience-card";
+import Section from "../ui/section";
 import { css } from "../../../../styled-system/css";
-import ProjectCard from "../ui/ProjectCard";
 
 
 
 export default function Experience() {
 
   return (
-    <section
-      className={css({
-        width: "70%",
-        margin: "auto",
-      })}
-    >
+    <Section title="Experience" id="experience" >
 
-      <h3 
+      <div
         className={css({
-          fontSize: "28px"
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "30px"
         })}
       >
-        My Experience
-      </h3>
-    </section>
+        {
+          EXPERIENCE_DATA.map(job => (
+            <ExperienceCard key={job.title} {...job} />
+          ))
+        }
+      </div>
+
+
+    </Section>
   )
 }

@@ -20,9 +20,9 @@ export default function Page() {
 
       <Hero />
 
-      <Projects />
-      {/* <Experience /> */}
+      <Experience />
 
+      <Projects />
     </main>
   );
 }

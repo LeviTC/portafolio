@@ -1,3 +1,3 @@
 
 
-export const HERO_SECTIONS = ["hero", "projects", "experience"];
+export const HERO_SECTIONS = ["hero", "experience", "projects",];

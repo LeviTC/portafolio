@@ -17,6 +17,15 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
     urlSite: "https://blife.mx/",
   },
   {
+    title: "B Life App",
+    shortDescription: "Developed and maintained a mobile e-commerce application for browsing products, placing orders, and tracking order status.",
+    description: "Developed and maintained a mobile e-commerce application that allowed users to browse products, place orders, and track order status. Implemented interfaces for product listings, order management, and order tracking, and integrated deep links to enable direct navigation to specific products and sections within the app.",
+    technologies: ["Flutter", "Dart", "Riverpod"],
+    imagePath: "/blife-app.png",
+    playUrl: "https://play.google.com/store/apps/details?id=com.blifemx",
+    iosUrl: "https://apps.apple.com/mx/app/b-life/id6472727690",
+  },
+  {
     title: "B Life Mayoreo (e-commerce)",
     shortDescription: "Developed and maintained the B Life Mayoreo wholesale e-commerce platform with responsive design and performance improvements.",
     description: "Developed and maintained the B Life Mayoreo wholesale e-commerce platform, implementing responsive design and improving performance to support a smooth purchasing experience for business customers.",
@@ -31,15 +40,6 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
     technologies: ["React", "TypeScript", "Vite", "Redux"],
     imagePath: "/blife-usa.png",
     urlSite: "https://blifesupplements.com/",
-  },
-  {
-    title: "B Life App",
-    shortDescription: "Developed and maintained a mobile e-commerce application for browsing products, placing orders, and tracking order status.",
-    description: "Developed and maintained a mobile e-commerce application that allowed users to browse products, place orders, and track order status. Implemented interfaces for product listings, order management, and order tracking, and integrated deep links to enable direct navigation to specific products and sections within the app.",
-    technologies: ["Flutter", "Dart", "Riverpod"],
-    imagePath: "/blife-app.png",
-    playUrl: "https://play.google.com/store/apps/details?id=com.blifemx",
-    iosUrl: "https://apps.apple.com/mx/app/b-life/id6472727690",
   },
   {
     title: "B Life Checkout",
