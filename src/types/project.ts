@@ -1,8 +1,10 @@
 export interface Project {
-  title: string
-  description: string
-  imagePath?: string
-  technologies: string[]
-  urlSite?: string
-  bullets?: string[]
+  title: string;
+  description?: string;
+  shortDescription: string;
+  imagePath?: string;
+  technologies: string[];
+  urlSite?: string;
+  iosUrl?: string;
+  playUrl?: string;
 }

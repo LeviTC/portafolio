@@ -48,6 +48,23 @@ export default function Modal({ show, onClose, children }: ModalProps) {
             })}
           
           >
+            <button
+              onClick={onClose}
+              className={css({
+                position: "absolute",
+                top: "16px",
+                right: "20px",
+                background: "none",
+                border: "none",
+                color: "#aaaaaa",
+                fontSize: "24px",
+                cursor: "pointer",
+                transition: "color 0.2s ease",
+                _hover: { color: "white" },
+              })}
+            >
+              ✕
+            </button>
             {children}
           </motion.div>
         </>

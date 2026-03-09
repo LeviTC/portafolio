@@ -1,17 +1,14 @@
 import Image from "next/image";
 import { css } from "../../../../styled-system/css";
 import { Project } from "@/types/project";
-import Button from "./Button";
 import Badge from "./badge";
 
 
 export default function ProjectCard({
   title,
-  description,
+  shortDescription,
   imagePath,
   technologies,
-  bullets,
-  urlSite,
 }: Project) {
   return (
     <div
@@ -91,8 +88,16 @@ export default function ProjectCard({
           {title}
         </h4>
 
-        <p className={css({ color: "secondary", })} >
-          {description}
+        <p
+          className={css({
+            color: "secondary",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            boxOrient: "vertical",
+            overflow: "hidden",
+          })}
+        >
+          {shortDescription}
         </p>
         
         {technologies?.length && (
@@ -109,25 +114,6 @@ export default function ProjectCard({
             ))}
           </div>
         )}
-        {/* {urlSite && (
-            <Button 
-              variant="outline" 
-              size="sm"
-              href={urlSite}
-            >
-              Visit
-            </Button>
-          )} */}
-
-        {/* {bullets?.length && (
-          <ul className={css({ paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "6px" })}>
-            {bullets.map((item, index) => (
-              <li key={index} className={css({ listStyleType: "disc", color: "secondary" })}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        )} */}
       </div>
     </div>
   );
