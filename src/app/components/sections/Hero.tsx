@@ -36,7 +36,7 @@ export default function Hero() {
           </h1>
           <h2 
             className={css({
-              fontSize: "20px",
+              fontSize: "24px",
               fontWeight: "300",
               textAlign: "start",
               mt: 1,
@@ -57,7 +57,10 @@ export default function Hero() {
         })}
       >
         <p>
-          With 4+ years of experience building e-commerce, ERP, and warehouse mobile applications. I specialize in React, React Native, Next.js, and TypeScript, and I enjoy creating scalable and efficient user-focused solutions.
+          Frontend developer with <b>4+</b> years of experience building e-commerce platforms, ERP systems, and warehouse mobile applications.
+          <br></br>
+          <br></br>
+          I specialize in React, React Native, Next.js, and TypeScript, creating scalable interfaces and tools that help businesses manage inventory, orders, and operations more efficiently.
         </p>
 
         <Contact />
