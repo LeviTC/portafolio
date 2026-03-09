@@ -65,6 +65,7 @@ type ButtonProps = RecipeVariantProps<typeof buttonStyles> & {
   onClick?: () => void;
   disabled?: boolean;
   href?: string;
+  download?: boolean;
   className?: string;
 }
 
@@ -76,18 +77,29 @@ export default function Button({
   size, 
   href,
   className,
+  download
 }: ButtonProps) {
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cx( buttonStyles({ variant, size }), className)}>
+      <a 
+        href={href} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={cx( buttonStyles({ variant, size }), className)}
+        download={download}
+      >
         {children}
       </a>
     )
   }
 
   return (
-    <button onClick={onClick} disabled={disabled} className={cx( buttonStyles({ variant, size }), className)}>
+    <button 
+      onClick={onClick} 
+      disabled={disabled} 
+      className={cx( buttonStyles({ variant, size }), className)}
+    >
       {children}
     </button>
   )

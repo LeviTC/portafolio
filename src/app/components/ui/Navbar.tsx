@@ -96,7 +96,12 @@ export default function Navbar() {
           className={navLinkStyle} 
           onClick={() => handleIconClick("https://www.linkedin.com/in/erletaco")}  
         />
-        <Button size="sm">Download CV</Button>
+        <Button 
+          href="/erick_tamariz_frontend_developer-cv-es.pdf" 
+          size="sm"
+        >
+          Download CV
+        </Button>
       </div>
     </div>
   )
