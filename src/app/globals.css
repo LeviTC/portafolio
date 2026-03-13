@@ -1,5 +1,9 @@
 @layer reset, base, tokens, recipes, utilities;
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   margin: 0;

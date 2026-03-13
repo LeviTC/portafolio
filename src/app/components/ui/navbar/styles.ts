@@ -1,0 +1,70 @@
+import { css } from "../../../../../styled-system/css";
+
+const styles = {
+  navbarContainer: css({
+    display: "flex",
+    width: "100%",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    zIndex: 100,
+    backgroundColor: "rgba(17, 17, 17, 0.8)",
+    backdropFilter: "blur(10px)",
+    py: "32px",
+    px: "80px",
+    alignItems: "center",
+    justifyContent: "space-between",
+    "mobile-xsToTablet-sm": { py: "16px", px: "24px" },
+  }),
+  navLinks: css({
+    display: "flex",
+    gap: "30px",
+    lgDown: { display: "none" },
+  }),
+  navActions: css({
+    display: "flex",
+    gap: "20px",
+    alignItems: "center",
+  }),
+  hamburger: css({
+    display: "none",
+    lgDown: { display: "flex" },
+    flexDirection: "column",
+    gap: "5px",
+    cursor: "pointer",
+    background: "none",
+    border: "none",
+    padding: "4px",
+  }),
+  hamburgerLine: css({
+    width: "24px",
+    height: "2px",
+    backgroundColor: "white",
+    transition: "all 0.3s ease",
+  }),
+  mobileMenu: css({
+    display: "flex",
+    width: "100%",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    zIndex: 99,
+    backgroundColor: "rgba(17, 17, 17, 0.9)",
+    backdropFilter: "blur(10px)",
+    alignItems: "center",
+    height: "100vh",
+    flexDirection: "column",
+    justifyContent: "center",
+    gap: "40px",
+  }),
+  navLinkStyle: (active?: boolean) => css({
+    cursor: "pointer",
+    color: active ? "primary" : "white",
+    transition: "color 0.3s ease",
+    _hover: { color: "primary" },
+    fontSize: "20px",
+    lgDown: { fontSize: "24px", fontWeight: "500px"},
+  }),
+};
+
+export default styles;

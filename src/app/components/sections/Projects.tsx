@@ -2,7 +2,7 @@
 import { PROFESSIONAL_PROJECTS } from "@/data/porfessional-projects";
 import { css } from "../../../../styled-system/css";
 import ProjectCard from "../ui/ProjectCard";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectModal from "../ui/project-modal";
