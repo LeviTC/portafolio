@@ -7,8 +7,8 @@ export default function Hero() {
       <div className={styles.leftCol}>
         <div>
           <h1 className={styles.name}>
-            Erick Leví
-            <br />
+            {`Erick Leví `}
+            <br className={styles.br} />
             Tamaríz Cortés
           </h1>
           <h2 className={styles.role}>
@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className={styles.rightCol}>
         <p>
-          Frontend developer with <b>4+</b> years of experience building e-commerce platforms, ERP systems, and warehouse mobile applications.
+          With <b>4+</b> years of experience building e-commerce platforms, ERP systems, and warehouse mobile applications.
           <br /><br />
           I specialize in React, React Native, Next.js, and TypeScript, creating scalable interfaces and tools that help businesses manage inventory, orders, and operations more efficiently.
         </p>

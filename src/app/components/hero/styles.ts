@@ -11,10 +11,17 @@ const styles = {
 
     "tablet-lgDown": {
       flexDirection: "column",
-      mt: "100px",
+      mt: "150px",
       gap: "0px",
-
     },
+    "tabletDown":{ 
+      mt: "100px",
+    }
+  }),
+  br: css({
+    "tabletToTablet-lg":{ 
+      display: "none"
+    }
   }),
   leftCol: css({
     display: "flex",
@@ -30,8 +37,12 @@ const styles = {
     fontWeight: "500",
     textAlign: "start",
     
+    
     "tablet-lgDown": {
       fontSize: "28px",
+    },
+    "tablet-lgOnly": {
+      fontSize: "40px"
     },
   }),
   role: css({
@@ -40,6 +51,10 @@ const styles = {
     textAlign: "start",
     mt: 1,
     color: "primary",
+
+    "tablet-lgOnly": {
+      fontSize: "24px"
+    },
   }),
   rightCol: css({
     width: "60%",
@@ -50,7 +65,7 @@ const styles = {
     "tablet-lgDown": {
       width: "100%",
       display: "flex",
-      flexDirection: "column-reverse"
+      flexDirection: "column"
     },
   }),
 };

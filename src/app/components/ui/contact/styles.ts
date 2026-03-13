@@ -7,13 +7,17 @@ const styles = {
     gap: "100px",
     color: "white",
 
-    "tablet-lgDown": {
+    tabletDown: {
       flexDirection: "column",
-      mt: "0px",
-      mb: "10px",
-      gap: "10px",
-
     },
+    "tablet-lgDown": {
+      mt: "20px",
+      gap: "10px",
+      justifyContent: "space-between"
+    },
+    "tablet-lgOnly": {
+      fontSize: "14px"
+    }
   }),
   contactItem: css({
     cursor: "pointer",
