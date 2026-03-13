@@ -1,6 +1,6 @@
 import { css } from "../../styled-system/css";
 import Experience from "./components/sections/Experience";
-import Hero from "./components/sections/Hero";
+import Hero from "./components/hero";
 import Projects from "./components/sections/Projects";
 import Navbar from "./components/ui/navbar";
 
