@@ -66,7 +66,7 @@ export default function Notification({ show, message = "Copied to clipboard" }: 
             >
               ✓
             </span>
-            <span className={css({ color: "white" })}>{message}</span>
+            <span className={css({ color: "white", "tablet-smDown": { fontSize: "11px" } })}>{message}</span>
           </motion.div>
         )}
       </AnimatePresence>
