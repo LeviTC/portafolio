@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -45,6 +46,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting;
+        setFooterInView(inView);
+        if (inView) setMenuOpen(false);
+      },
+      { threshold: 0, rootMargin: "0px" }
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -58,11 +76,20 @@ export default function Navbar() {
 
   return (
     <>
-      <div
+      <motion.div
         className={styles.navbarContainer}
+        initial={false}
+        animate={{
+          y: footerInView ? "-100%" : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: [0.4, 0, 0.2, 1],
+        }}
         style={{
           backdropFilter: "blur(10px) saturate(100%)",
           WebkitBackdropFilter: "blur(10px) saturate(100%)",
+          pointerEvents: footerInView ? "none" : "auto",
         }}
       >
         {/* links desktop */}
@@ -91,7 +118,7 @@ export default function Navbar() {
           <LinkedinIcon className={styles.navLinkStyle()} onClick={() => handleIconClick("https://www.linkedin.com/in/erletaco")} />
           <Button href="/erick_tamariz_frontend_developer-cv-es.pdf" size="sm">Get resume</Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* menu mobile */}
       <AnimatePresence>

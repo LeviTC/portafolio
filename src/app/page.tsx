@@ -3,6 +3,7 @@ import Experience from "./components/sections/experience";
 import Hero from "./components/sections/hero";
 import Projects from "./components/sections/projects/index";
 import Navbar from "./components/ui/navbar";
+import { Footer } from "./components/ui/footer";
 
 export default function Page() {
   return (
@@ -12,10 +13,7 @@ export default function Page() {
         flexDirection: "column",
         backgroundColor: "#000000",
         color: "white",
-        mb: "50px",
         gap: "200px",
-        // overflowX: "hidden",
-        // width: "100%",
         
         "tablet-lgDown": {
           gap: "150px"
@@ -29,6 +27,8 @@ export default function Page() {
       <Experience />
 
       <Projects />
+
+      <Footer />
     </main>
   );
 }
