@@ -13,6 +13,21 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (!menuOpen) return;
+
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = HERO_SECTIONS;
       for (const id of sections) {
@@ -43,7 +58,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={styles.navbarContainer}>
+      <div
+        className={styles.navbarContainer}
+        style={{
+          backdropFilter: "blur(10px) saturate(100%)",
+          WebkitBackdropFilter: "blur(10px) saturate(100%)",
+        }}
+      >
         {/* links desktop */}
         <div className={styles.navLinks}>
           {HERO_SECTIONS.map((section) => (
@@ -81,6 +102,11 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
             className={styles.mobileMenu}
+            onClick={() => setMenuOpen(false)}
+            style={{
+              backdropFilter: "blur(10px) saturate(100%)",
+              WebkitBackdropFilter: "blur(10px) saturate(100%)",
+            }}
           >
 
             {HERO_SECTIONS.map((section) => (
