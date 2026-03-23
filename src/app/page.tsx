@@ -1,7 +1,7 @@
 import { css } from "../../styled-system/css";
 import Experience from "./components/sections/experience";
 import Hero from "./components/sections/hero";
-import Projects from "./components/sections/Projects";
+import Projects from "./components/sections/projects/index";
 import Navbar from "./components/ui/navbar";
 
 export default function Page() {

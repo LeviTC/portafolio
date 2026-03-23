@@ -17,12 +17,24 @@ export default function ProjectCard({
       padding: "16px",
       py: "30px",
       // height: "350px",
-      width: "360px",
+      width: "100%",
+      maxW: "360px",
       display: "flex",
       flexDirection: "column", 
       justifyContent: "space-between",
       gap: "16px",
       transition: "transform 0.4s ease",
+      mx: "auto",
+      "tablet-lgDown": {
+        maxW: "320px",
+        py: "24px",
+        padding: "14px",
+      },
+      "tabletDown": {
+        maxW: "300px",
+        py: "20px",
+        padding: "12px",
+      },
   
       // esquina superior izquierda
       _before: {
@@ -66,6 +78,12 @@ export default function ProjectCard({
             height: "200px",
             overflow: "hidden",
             borderRadius: "3px",
+            "tablet-lgDown": {
+              height: "180px",
+            },
+            "tabletDown": {
+              height: "160px",
+            },
           })}
         >
           <Image
@@ -84,7 +102,16 @@ export default function ProjectCard({
           gap: "8px",
         })}
       >
-        <h4 className={css({ fontSize: "20px", fontWeight: "500", })}>
+        <h4 className={css({
+          fontSize: "20px",
+          fontWeight: "500",
+          "tablet-lgDown": {
+            fontSize: "18px",
+          },
+          "tabletDown": {
+            fontSize: "17px",
+          },
+        })}>
           {title}
         </h4>
 

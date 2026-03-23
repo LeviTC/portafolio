@@ -1,10 +1,10 @@
 import { Project } from "@/types/project";
 import Modal from "../modal/Modal";
-import { css } from "../../../../../styled-system/css";
 import Badge from "../badge";
 import Button from "../Button";
 import PlayStoreIcon from "../icons/PlayStoreIcon";
 import AppStoreIcon from "../icons/AppStoreIcon";
+import styles from "./styles";
 
 
 interface ProjectModal {
@@ -25,35 +25,23 @@ export default function ProjectModal({
       show={open}
       onClose={onClose}
     >
-      <div 
-        className={css({
-          display: "flex",
-          flexDirection: "column",
-          gap: "30px"
-        })}>
-          <p className={css({ fontSize: "24px", fontWeight: "500", })}>
-            {project?.title}
+      <div className={styles.content}>
+          <p className={styles.title}>
+            {project?.title ?? ""}
           </p>
 
-          <p className={css({ color: "secondary", fontSize: "18px" })} >
-            {project?.description}
+          <p className={styles.description}>
+            {project?.description ?? ""}
           </p>
 
-          <div
-            className={css({
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              mt: "15px",
-            })}
-          >
-            <div className={css({ display: "flex", flexWrap: "wrap", gap: "5px" })}>
-              {project?.technologies.map(tech => (
+          <div className={styles.footer}>
+            <div className={styles.techList}>
+              {project?.technologies?.map(tech => (
                 <Badge key={tech} text={tech} />
               ))}
             </div>
 
-            <div className={css({ display: "flex", gap: "10px" })} >
+            <div className={styles.actions}>
               {project?.urlSite && (
                 <Button variant="primary" href={project?.urlSite}>
                   Visit
@@ -66,7 +54,7 @@ export default function ProjectModal({
                 </Button>
               )}
 
-              {project?.playUrl && (
+              {project?.iosUrl && (
                 <Button variant="ghost" href={project?.iosUrl}>
                   <AppStoreIcon />
                 </Button>
