@@ -1,5 +1,5 @@
 import styles from "./styles";
-import Contact from "../ui/contact";
+import Contact from "../../ui/contact";
 
 export default function Hero() {
   return (

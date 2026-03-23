@@ -1,7 +1,7 @@
 import { EXPERIENCE_DATA } from "@/data/experience";
-import ExperienceCard from "../ui/experience-card";
-import Section from "../ui/section";
-import { css } from "../../../../styled-system/css";
+import Section from "../../ui/section";
+import ExperienceCard from "../../ui/experience-card";
+import styles from "./styles";
 
 
 
@@ -11,11 +11,7 @@ export default function Experience() {
     <Section title="Experience" id="experience" >
 
       <div
-        className={css({
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "30px"
-        })}
+        className={styles.grid}
       >
         {
           EXPERIENCE_DATA.map(job => (

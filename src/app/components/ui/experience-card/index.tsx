@@ -1,6 +1,6 @@
 
 import { IExperience } from "@/types/experience";
-import { css } from "../../../../../styled-system/css";
+import styles from "@/app/components/ui/experience-card/styles";
 
 export default function ExperienceCard({
   title,
@@ -12,69 +12,49 @@ export default function ExperienceCard({
 
   return (
     <div
-      className={css({
-        width: "100%",
-      })}
+      className={styles.card}
     >
       <div 
-        className={css({
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          
-        })}
+        className={styles.topRow}
       >
         <div>
-          <p className={css({fontSize: "28px", fontWeight: "500"})}>
+          <p className={styles.company}>
             {company}
           </p>
-          <p className={css({fontSize: "18px", fontWeight: "300", color: "primary"})}>
+          <p className={styles.title}>
             {title}
           </p>
         </div>
 
 
         <div
-          className={css({
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: "5px",
-          })}
+          className={styles.dates}
         >
-          <p className={css({fontSize: "18px", fontWeight: "400", color: "secondary"})}>
+          <p className={styles.dateText}>
             {startDate} 
           </p>
 
           <div 
-            className={css({
-              flex: 1,
-              bg: "secondary",
-              minW: "20px",
-              maxW: "34px",
-              height: "1px"
-            })} 
+            className={styles.dateLine} 
           />
-          <p className={css({fontSize: "18px", fontWeight: "400", color: "secondary"})}>
+          <p className={styles.dateText}>
             {endDate}
           </p>
         </div>
 
       </div>
 
-      <p className={css({ mt: 5, fontWeight: "400", color: "secondary"})}>
+      <p className={styles.description}>
         {description}
       </p>
 
-      <div 
-        className={css({
-          flex: 1,
-          bg: "secondary",
-          height: "1px",
-          mt: "70px",
-        })} 
-      />
+      <div
+        className={styles.bottomLineWrapper}
+      >
+        <div
+          className={styles.bottomLine}
+        />
+      </div>
     </div>
   )
 }
