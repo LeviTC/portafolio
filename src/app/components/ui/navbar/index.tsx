@@ -116,7 +116,7 @@ export default function Navbar() {
         <div className={styles.navActions}>
           <GithubIcon className={styles.navLinkStyle()} onClick={() => handleIconClick("https://github.com/LeviTC")} />
           <LinkedinIcon className={styles.navLinkStyle()} onClick={() => handleIconClick("https://www.linkedin.com/in/erletaco")} />
-          <Button href="/erick_tamariz_frontend_developer-cv-es.pdf" size="sm">Get resume</Button>
+          <Button href="/ERICK_TAMARIZ_FRONTEND_DEVELOPER_EN_compressed.pdf" size="sm">Get resume</Button>
         </div>
       </motion.div>
 

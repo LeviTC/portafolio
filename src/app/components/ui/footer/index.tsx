@@ -41,7 +41,7 @@ export const Footer = () => {
         <div className={styles.ctaCell}>
           <div className={styles.ctaInner}>
             <Button
-              href="/erick_tamariz_frontend_developer-cv-es.pdf"
+              href="/ERICK_TAMARIZ_FRONTEND_DEVELOPER_EN_compressed.pdf"
               size="lg"
               className={styles.resumeBtn}
             >
