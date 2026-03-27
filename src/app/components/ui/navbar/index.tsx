@@ -1,6 +1,6 @@
 "use client"
 import styles from "./styles";
-import { cx } from "../../../../../styled-system/css";
+import { cx, css } from "../../../../../styled-system/css";
 import LinkedinIcon from "../icons/LinkedIn";
 import GithubIcon from "../icons/Github";
 import Button from "../Button";
