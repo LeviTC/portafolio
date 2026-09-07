@@ -5,6 +5,7 @@ import Contact from "../../ui/contact";
 export default function Hero() {
   const t = useTranslations("Hero");
 
+  
   return (
     <section id="hero" className={styles.section}>
       <div className={styles.leftCol}>
