@@ -9,6 +9,7 @@ import Notification from "../Notification"
 import { HERO_SECTIONS } from "@/data/hero-sections"
 import copyToClipboard from "@/utils/copy-to-clipboard"
 import { getResumeHref } from "@/utils/resume"
+import Reveal from "../reveal"
 import {
   copyableValueClass,
   headingClass,
@@ -45,7 +46,7 @@ export const Footer = () => {
     <footer id="footer" className={styles.footer}>
       <Notification show={showCopyNotice} />
       <div className={styles.grid}>
-        <div className={styles.ctaCell}>
+        <Reveal className={styles.ctaCell} y={64}>
           <div className={styles.ctaInner}>
             <Button
               href={resumeHref}
@@ -67,9 +68,9 @@ export const Footer = () => {
               />
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.contactMenuOuter}>
+        <Reveal className={styles.contactMenuOuter} y={64} delay={0.15}>
           <div className={styles.contactMenuInner}>
             <div className={styles.flankColumn}>
               <h3 className={headingClass}>{t("contact")}</h3>
@@ -102,7 +103,7 @@ export const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </footer>
   )

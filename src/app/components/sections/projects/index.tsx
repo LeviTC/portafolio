@@ -2,12 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Project } from "@/types/project";
 import ProjectCard from "../../ui/ProjectCard";
 import Button from "../../ui/Button";
 import ProjectModal from "../../ui/project-modal";
 import Section from "../../ui/section";
+import Reveal, { RevealItem } from "../../ui/reveal";
 import styles from "./styles";
 
 export default function Projects() {
@@ -59,28 +60,28 @@ export default function Projects() {
     <>
       <Section id="projects" title={t("title")}>
         <div className={styles.grid}>
-          <AnimatePresence initial={false}>
-            {projectsToDisplay.map((project) => (
-              <motion.div
+          <AnimatePresence initial={false} mode="popLayout">
+            {projectsToDisplay.map((project, index) => (
+              <RevealItem
                 key={project.title}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
+                delay={Math.min(index * 0.06, 0.3)}
               >
-                <div onClick={() => handleOpenModal(project)}>
+                <div
+                  onClick={() => handleOpenModal(project)}
+                  style={{ cursor: "pointer" }}
+                >
                   <ProjectCard {...project} />
                 </div>
-              </motion.div>
+              </RevealItem>
             ))}
           </AnimatePresence>
         </div>
 
-        <div className={styles.buttonWrapper}>
+        <Reveal y={48} delay={0.05} className={styles.buttonWrapper}>
           <Button className={styles.button} onClick={handleToggle}>
             {showAll ? t("showLess") : t("viewAll")}
           </Button>
-        </div>
+        </Reveal>
       </Section>
 
       <ProjectModal

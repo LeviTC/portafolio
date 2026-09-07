@@ -6,6 +6,33 @@ const styles = {
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    cursor: "default",
+    _hover: {
+      "& [data-experience-fill]": {
+        transform: "scaleY(1)",
+      },
+    },
+  }),
+  content: css({
+    position: "relative",
+    isolation: "isolate",
+    overflow: "hidden",
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    px: "18px",
+    pt: "16px",
+    pb: "0",
+  }),
+  fill: css({
+    position: "absolute",
+    inset: 0,
+    zIndex: -1,
+    backgroundColor: "rgba(255, 255, 255, 0.06)",
+    transform: "scaleY(0)",
+    transformOrigin: "bottom",
+    transition: "transform 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+    pointerEvents: "none",
   }),
   topRow: css({
     display: "flex",
@@ -64,21 +91,19 @@ const styles = {
   }),
   description: css({
     mt: 5,
+    mb: "22px",
     fontWeight: "400",
     color: "secondary",
     fontSize: "16px",
     lineHeight: "1.6",
     "tabletDown": {
+      mb: "16px",
       lineHeight: "1.5",
     },
   }),
   bottomLineWrapper: css({
     mt: "auto",
-    pt: "30px",
-    "tabletDown": {
-      mt: "20px",
-      pt: "16px",
-    },
+    px: "18px",
   }),
   bottomLine: css({
     bg: "secondary",

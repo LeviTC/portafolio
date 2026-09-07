@@ -23,7 +23,6 @@ export default function ProjectCard({
       flexDirection: "column", 
       justifyContent: "space-between",
       gap: "16px",
-      transition: "transform 0.4s ease",
       mx: "auto",
       "tablet-lgDown": {
         maxW: "320px",
@@ -48,6 +47,7 @@ export default function ProjectCard({
         borderLeftWidth: "1px",
         borderStyle: "solid",
         borderColor: "#555555",
+        transition: "border-color 0.35s ease",
       },
   
       // esquina inferior derecha
@@ -62,11 +62,16 @@ export default function ProjectCard({
         borderRightWidth: "1px",
         borderStyle: "solid",
         borderColor: "#555555",
+        transition: "border-color 0.35s ease",
       },
       _hover: {
-        transform: "scale(0.97)",
-        transition: "transform 0.3s ease",
         cursor: "pointer",
+        _before: {
+          borderColor: "primary",
+        },
+        _after: {
+          borderColor: "primary",
+        },
       },
     })}
     >
