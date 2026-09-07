@@ -123,5 +123,10 @@
   },
   "Common": {
     "copied": "Copied to clipboard"
+  },
+  "ContactActions": {
+    "copy": "Copy",
+    "whatsapp": "WhatsApp",
+    "sendEmail": "Send email"
   }
 }

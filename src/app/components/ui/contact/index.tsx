@@ -1,30 +1,26 @@
-"use client"
+"use client";
 
-import copyToClipboard from "@/utils/copy-to-clipboard"
-import { useState } from "react"
-import Notification from "../Notification"
-import styles from "./styles"
+import ContactActionTrigger from "../contact-action";
+import styles from "./styles";
+
+const PHONE_VALUE = "+522227448864";
+const EMAIL_VALUE = "erletaco@outlook.com";
 
 export default function Contact() {
-  const [show, setShow] = useState(false);
-
-  const handleCopy = (text: string) => {
-    copyToClipboard(text)
-    setShow(true)
-    setTimeout(() => setShow(false), 2000)
-  }
-
   return (
-    <>
-      <Notification show={show} />
-      <div className={styles.container}>
-        <p className={styles.contactItem} onClick={() => handleCopy("+522227448864")}>
-          (+52) 222 744 8864
-        </p>
-        <p className={styles.contactItem} onClick={() => handleCopy("erletaco@outlook.com")}>
-          erletaco@outlook.com
-        </p>
-      </div>
-    </>
-  )
+    <div className={styles.container}>
+      <ContactActionTrigger
+        kind="phone"
+        value={PHONE_VALUE}
+        label="(+52) 222 744 8864"
+        className={styles.contactItem}
+      />
+      <ContactActionTrigger
+        kind="email"
+        value={EMAIL_VALUE}
+        label="erletaco@outlook.com"
+        className={styles.contactItem}
+      />
+    </div>
+  );
 }

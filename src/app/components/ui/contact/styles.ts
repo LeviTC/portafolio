@@ -20,6 +20,7 @@ const styles = {
     }
   }),
   contactItem: css({
+    all: "unset",
     cursor: "pointer",
     transition: "color 0.3s ease",
     position: "relative",

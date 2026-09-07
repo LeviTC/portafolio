@@ -159,5 +159,10 @@
   },
   "Common": {
     "copied": "Copiado al portapapeles"
+  },
+  "ContactActions": {
+    "copy": "Copiar",
+    "whatsapp": "WhatsApp",
+    "sendEmail": "Enviar correo"
   }
 }
