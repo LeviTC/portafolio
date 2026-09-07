@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import styles from "./styles";
 import { cx } from "../../../../../styled-system/css";
 import LinkedinIcon from "../icons/LinkedIn";
@@ -7,8 +8,16 @@ import Button from "../Button";
 import { useEffect, useState } from "react";
 import { HERO_SECTIONS } from "@/data/hero-sections";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import { getResumeHref } from "@/utils/resume";
 
 export default function Navbar() {
+  const t = useTranslations("Nav");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerInView, setFooterInView] = useState(false);
@@ -40,7 +49,7 @@ export default function Navbar() {
           break;
         }
       }
-    }
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -69,10 +78,35 @@ export default function Navbar() {
     const offset = 150;
     const top = el.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
-    setMenuOpen(false);  // cerrar menu al navegar
-  }
+    setMenuOpen(false);
+  };
 
   const handleIconClick = (url: string) => window.open(url);
+
+  const switchLocale = (nextLocale: (typeof routing.locales)[number]) => {
+    router.replace(pathname, { locale: nextLocale });
+    setMenuOpen(false);
+  };
+
+  const resumeHref = getResumeHref(locale);
+
+  const localeSwitcher = (
+    <div className={styles.localeSwitcher}>
+      {routing.locales.map((item, index) => (
+        <span key={item} className={styles.localeSwitcherItem}>
+          {index > 0 && <span className={styles.localeDivider}>|</span>}
+          <button
+            type="button"
+            onClick={() => switchLocale(item)}
+            className={cx(styles.localeButton(locale === item))}
+            aria-current={locale === item ? "true" : undefined}
+          >
+            {item.toUpperCase()}
+          </button>
+        </span>
+      ))}
+    </div>
+  );
 
   return (
     <>
@@ -92,7 +126,6 @@ export default function Navbar() {
           pointerEvents: footerInView ? "none" : "auto",
         }}
       >
-        {/* links desktop */}
         <div className={styles.navLinks}>
           {HERO_SECTIONS.map((section) => (
             <div
@@ -100,27 +133,38 @@ export default function Navbar() {
               onClick={() => scrollTo(section)}
               className={cx(styles.navLinkStyle(activeSection === section))}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {t(section)}
             </div>
           ))}
-        </div>        
+        </div>
 
-        {/* hamburguesa mobile */}
-        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className={styles.hamburger}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span className={styles.hamburgerLine} />
           <span className={styles.hamburgerLine} />
           <span className={styles.hamburgerLine} />
         </button>
 
-        {/* acciones desktop */}
         <div className={styles.navActions}>
-          <GithubIcon className={styles.navLinkStyle()} onClick={() => handleIconClick("https://github.com/LeviTC")} />
-          <LinkedinIcon className={styles.navLinkStyle()} onClick={() => handleIconClick("https://www.linkedin.com/in/erletaco")} />
-          <Button href="/ERICK_TAMARIZ_FRONTEND_DEVELOPER_EN_compressed.pdf" size="sm">Get resume</Button>
+          {localeSwitcher}
+          <GithubIcon
+            className={styles.navLinkStyle()}
+            onClick={() => handleIconClick("https://github.com/LeviTC")}
+          />
+          <LinkedinIcon
+            className={styles.navLinkStyle()}
+            onClick={() =>
+              handleIconClick("https://www.linkedin.com/in/erletaco")
+            }
+          />
+          <Button href={resumeHref} size="sm">
+            {t("getResume")}
+          </Button>
         </div>
       </motion.div>
 
-      {/* menu mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -135,23 +179,18 @@ export default function Navbar() {
               WebkitBackdropFilter: "blur(10px) saturate(100%)",
             }}
           >
-
             {HERO_SECTIONS.map((section) => (
               <div
                 key={section}
                 onClick={() => scrollTo(section)}
                 className={styles.navLinkStyle(activeSection === section)}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {t(section)}
               </div>
             ))}
-
-            <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-              
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

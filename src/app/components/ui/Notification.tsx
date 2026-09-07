@@ -4,6 +4,7 @@ import { useSyncExternalStore } from "react"
 import { createPortal } from "react-dom"
 import { css } from "../../../../styled-system/css"
 import { AnimatePresence, motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
 interface CopyNotificationProps {
   show: boolean
@@ -16,8 +17,10 @@ function useIsClient() {
   return useSyncExternalStore(emptySubscribe, () => true, () => false)
 }
 
-export default function Notification({ show, message = "Copied to clipboard" }: CopyNotificationProps) {
+export default function Notification({ show, message }: CopyNotificationProps) {
+  const t = useTranslations("Common")
   const isClient = useIsClient()
+  const displayMessage = message ?? t("copied")
 
   if (!isClient) {
     return null
@@ -66,7 +69,7 @@ export default function Notification({ show, message = "Copied to clipboard" }: 
             >
               ✓
             </span>
-            <span className={css({ color: "white", "tablet-smDown": { fontSize: "11px" } })}>{message}</span>
+            <span className={css({ color: "white", "tablet-smDown": { fontSize: "11px" } })}>{displayMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>

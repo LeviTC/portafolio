@@ -1,3 +1,3 @@
+export const HERO_SECTIONS = ["hero", "experience", "projects"] as const;
 
-
-export const HERO_SECTIONS = ["hero", "experience", "projects",];
+export type HeroSection = (typeof HERO_SECTIONS)[number];

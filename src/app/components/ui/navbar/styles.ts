@@ -65,6 +65,34 @@ const styles = {
     fontSize: "20px",
     lgDown: { fontSize: "24px", fontWeight: "500px"},
   }),
+  localeSwitcher: css({
+    display: "flex",
+    alignItems: "center",
+    gap: "4px",
+  }),
+  localeSwitcherItem: css({
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "4px",
+  }),
+  localeDivider: css({
+    color: "secondary",
+    fontSize: "14px",
+  }),
+  localeButton: (active?: boolean) =>
+    css({
+      cursor: "pointer",
+      background: "none",
+      border: "none",
+      padding: "0",
+      color: active ? "primary" : "white",
+      fontSize: "14px",
+      fontWeight: active ? "600" : "400",
+      fontFamily: "inherit",
+      filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.85))",
+      transition: "color 0.3s ease",
+      _hover: { color: "primary" },
+    }),
 };
 
 export default styles;

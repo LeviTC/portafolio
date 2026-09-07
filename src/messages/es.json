@@ -1,0 +1,120 @@
+{
+  "Meta": {
+    "title": "Erick Leví | Desarrollador Front-End",
+    "description": "Desarrollador Front-End con más de 4 años de experiencia creando plataformas de e-commerce, sistemas ERP y aplicaciones móviles de almacén. Especializado en React, Next.js y TypeScript."
+  },
+  "Nav": {
+    "hero": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "getResume": "Descargar CV"
+  },
+  "Hero": {
+    "role": "Desarrollador Front-End",
+    "bioLead": "Con <years>más de 4</years> años de experiencia creando plataformas de e-commerce, sistemas ERP y aplicaciones móviles de almacén.",
+    "bioSpecialty": "Me especializo en React, React Native, Next.js y TypeScript, creando interfaces y herramientas escalables que ayudan a las empresas a gestionar inventario, pedidos y operaciones de forma más eficiente."
+  },
+  "Experience": {
+    "title": "Experiencia",
+    "items": [
+      {
+        "title": "Líder de equipo Front-End",
+        "company": "B Life",
+        "startDate": "Ago 2024",
+        "endDate": "Feb 2026",
+        "description": "Lideré el desarrollo front-end de múltiples plataformas de e-commerce, módulos ERP y aplicaciones móviles de almacén. Coordiné tareas de desarrollo y revisé código. Guié al equipo en buenas prácticas de GitFlow, incluyendo estrategias de branching, revisiones de pull requests y gestión de releases."
+      },
+      {
+        "title": "Desarrollador Front-End",
+        "company": "B Life",
+        "startDate": "Ene 2024",
+        "endDate": "Ago 2024",
+        "description": "Desarrollé y mantuve plataformas de e-commerce, sistemas de checkout y módulos ERP. Construí interfaces responsivas e implementé funcionalidades para gestión de pedidos, dashboards y flujos de almacén."
+      },
+      {
+        "title": "Desarrollador Full-Stack",
+        "company": "SOLENCO",
+        "startDate": "Ago 2023",
+        "endDate": "Feb 2024",
+        "description": "Desarrollé funcionalidades de aplicaciones web en frontend y backend, integrando APIs y construyendo interfaces de usuario para sistemas empresariales con tecnologías modernas de JavaScript."
+      }
+    ]
+  },
+  "Projects": {
+    "title": "Proyectos profesionales",
+    "viewAll": "Ver todos",
+    "showLess": "Ver menos",
+    "visit": "Visitar",
+    "items": [
+      {
+        "title": "B Life ERP",
+        "shortDescription": "Desarrollé y mantuve módulos centrales de un sistema ERP usado para procesamiento de pedidos, gestión de inventario y operaciones de almacén.",
+        "description": "Desarrollé y mantuve múltiples módulos de un sistema ERP para gestionar operaciones de almacén, pedidos e inventario. Construí dashboards interactivos para visualización de métricas de negocio, implementé interfaces de gestión de pedidos y desarrollé herramientas de almacén como picking de pedidos por código de barras. También integré autenticación segura con Cloudflare CAPTCHA.",
+        "technologies": ["React", "TypeScript", "Vite", "Zustand", "Redux"],
+        "imagePath": "/blife-erp.png"
+      },
+      {
+        "title": "B Life MX (e-commerce)",
+        "shortDescription": "Desarrollé y mantuve la plataforma de e-commerce B Life MX con diseño responsivo y mejoras de rendimiento usando Next.js.",
+        "description": "Desarrollé y mantuve la plataforma de e-commerce B Life MX, implementando diseño responsivo y mejorando el rendimiento aprovechando características de Next.js como server-side rendering y routing optimizado.",
+        "technologies": ["React", "TypeScript", "Next.js"],
+        "imagePath": "/blife-mx.png",
+        "urlSite": "https://blife.mx/"
+      },
+      {
+        "title": "B Life App",
+        "shortDescription": "Desarrollé y mantuve una aplicación móvil de e-commerce para explorar productos, realizar pedidos y dar seguimiento a su estado.",
+        "description": "Desarrollé y mantuve una aplicación móvil de e-commerce que permitía a los usuarios explorar productos, realizar pedidos y dar seguimiento a su estado. Implementé interfaces de listados de productos, gestión de pedidos y seguimiento, e integré deep links para navegar directamente a productos y secciones específicas dentro de la app.",
+        "technologies": ["Flutter", "Dart", "Riverpod"],
+        "imagePath": "/blife-app.png",
+        "playUrl": "https://play.google.com/store/apps/details?id=com.blifemx",
+        "iosUrl": "https://apps.apple.com/mx/app/b-life/id6472727690"
+      },
+      {
+        "title": "B Life Mayoreo (e-commerce)",
+        "shortDescription": "Desarrollé y mantuve la plataforma de e-commerce mayoreo B Life Mayoreo con diseño responsivo y mejoras de rendimiento.",
+        "description": "Desarrollé y mantuve la plataforma de e-commerce mayoreo B Life Mayoreo, implementando diseño responsivo y mejorando el rendimiento para ofrecer una experiencia de compra fluida a clientes empresariales.",
+        "technologies": ["React", "TypeScript", "Vite", "Redux"],
+        "imagePath": "/blife-mayoreo.png",
+        "urlSite": "https://mayoreo.blife.mx/"
+      },
+      {
+        "title": "B Life USA (e-commerce)",
+        "shortDescription": "Desarrollé y mantuve la plataforma de e-commerce B Life USA con diseño responsivo y mejoras de rendimiento.",
+        "description": "Desarrollé y mantuve la plataforma de e-commerce B Life USA, implementando diseño responsivo y mejorando el rendimiento para ofrecer una experiencia de compra rápida y confiable a clientes en EE. UU.",
+        "technologies": ["React", "TypeScript", "Vite", "Redux"],
+        "imagePath": "/blife-usa.png",
+        "urlSite": "https://blifesupplements.com/"
+      },
+      {
+        "title": "B Life Checkout",
+        "shortDescription": "Desarrollé y mantuve el flujo de checkout de la plataforma de e-commerce B Life.",
+        "description": "Desarrollé y mantuve el flujo de checkout de la plataforma de e-commerce B Life. Integré endpoints de pago del backend para procesar transacciones e implementé el cálculo de tarifas de envío consumiendo APIs de FedEx, Estafeta y DHL según la dirección de entrega del usuario.",
+        "technologies": ["React", "TypeScript", "Vite"],
+        "imagePath": "/blife-checkout.png"
+      },
+      {
+        "title": "B Life Armado (App)",
+        "shortDescription": "Desarrollé y mantuve una app móvil de almacén usada por el personal para escanear productos y armar pedidos con PDAs Zebra.",
+        "description": "Desarrollé y mantuve una aplicación móvil de almacén usada por el personal para procesar y armar pedidos. Implementé flujos de escaneo de códigos de barras con dispositivos PDA Zebra para verificar productos e integré impresión de etiquetas para identificar pedidos durante el proceso de armado.",
+        "technologies": ["React Native (CLI)", "TypeScript", "Redux"]
+      },
+      {
+        "title": "B Life escaneo (App)",
+        "shortDescription": "Desarrollé y mantuve una app móvil de almacén usada para despachar pedidos armados y asignar envíos a paqueterías.",
+        "description": "Desarrollé y mantuve una aplicación móvil de almacén usada para despachar pedidos armados. Implementé flujos para registrar envíos salientes, asignar pedidos a paqueterías y dar seguimiento a qué viaje de paquetería correspondía cada envío durante el proceso de entrega.",
+        "technologies": ["React Native (Expo)", "TypeScript", "Redux"]
+      }
+    ]
+  },
+  "Footer": {
+    "getResume": "Descargar CV",
+    "contact": "Contacto",
+    "phone": "Teléfono:",
+    "email": "Correo:",
+    "menu": "Menú"
+  },
+  "Common": {
+    "copied": "Copiado al portapapeles"
+  }
+}

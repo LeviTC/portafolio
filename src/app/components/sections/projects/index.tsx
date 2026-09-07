@@ -1,16 +1,18 @@
 "use client";
 
-import { PROFESSIONAL_PROJECTS } from "@/data/porfessional-projects";
-import ProjectCard from "../../ui/ProjectCard";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import Button from "../../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
-import ProjectModal from "../../ui/project-modal";
 import { Project } from "@/types/project";
+import ProjectCard from "../../ui/ProjectCard";
+import Button from "../../ui/Button";
+import ProjectModal from "../../ui/project-modal";
 import Section from "../../ui/section";
 import styles from "./styles";
 
 export default function Projects() {
+  const t = useTranslations("Projects");
+  const projects = t.raw("items") as Project[];
   const [showAll, setShowAll] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [isMobile, setIsMobile] = useState(() =>
@@ -31,8 +33,8 @@ export default function Projects() {
 
   const initialCardsCount = isMobile ? 3 : 6;
   const projectsToDisplay = showAll
-    ? PROFESSIONAL_PROJECTS
-    : PROFESSIONAL_PROJECTS.slice(0, initialCardsCount);
+    ? projects
+    : projects.slice(0, initialCardsCount);
 
   const handleToggle = () => {
     if (showAll) {
@@ -55,7 +57,7 @@ export default function Projects() {
 
   return (
     <>
-      <Section id="projects" title="Professional projects">
+      <Section id="projects" title={t("title")}>
         <div className={styles.grid}>
           <AnimatePresence initial={false}>
             {projectsToDisplay.map((project) => (
@@ -76,7 +78,7 @@ export default function Projects() {
 
         <div className={styles.buttonWrapper}>
           <Button className={styles.button} onClick={handleToggle}>
-            {showAll ? "Show less" : "View all"}
+            {showAll ? t("showLess") : t("viewAll")}
           </Button>
         </div>
       </Section>

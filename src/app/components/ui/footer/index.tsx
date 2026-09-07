@@ -1,12 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import { useLocale, useTranslations } from "next-intl"
 import LinkedinIcon from "../icons/LinkedIn"
 import GithubIcon from "../icons/Github"
 import Button from "../Button"
 import Notification from "../Notification"
 import { HERO_SECTIONS } from "@/data/hero-sections"
 import copyToClipboard from "@/utils/copy-to-clipboard"
+import { getResumeHref } from "@/utils/resume"
 import {
   copyableValueClass,
   headingClass,
@@ -16,6 +18,9 @@ import {
 } from "./styles"
 
 export const Footer = () => {
+  const t = useTranslations("Footer")
+  const tNav = useTranslations("Nav")
+  const locale = useLocale()
   const [showCopyNotice, setShowCopyNotice] = useState(false)
 
   const handleCopy = (text: string) => {
@@ -34,6 +39,8 @@ export const Footer = () => {
     window.scrollTo({ top, behavior: "smooth" })
   }
 
+  const resumeHref = getResumeHref(locale)
+
   return (
     <footer id="footer" className={styles.footer}>
       <Notification show={showCopyNotice} />
@@ -41,11 +48,11 @@ export const Footer = () => {
         <div className={styles.ctaCell}>
           <div className={styles.ctaInner}>
             <Button
-              href="/ERICK_TAMARIZ_FRONTEND_DEVELOPER_EN_compressed.pdf"
+              href={resumeHref}
               size="lg"
               className={styles.resumeBtn}
             >
-              Get resume
+              {t("getResume")}
             </Button>
             <div className={styles.iconRow}>
               <GithubIcon
@@ -65,15 +72,15 @@ export const Footer = () => {
         <div className={styles.contactMenuOuter}>
           <div className={styles.contactMenuInner}>
             <div className={styles.flankColumn}>
-              <h3 className={headingClass}>Contact</h3>
-              <p className={labelClass}>Phone:</p>
+              <h3 className={headingClass}>{t("contact")}</h3>
+              <p className={labelClass}>{t("phone")}</p>
               <p
                 className={copyableValueClass}
                 onClick={() => handleCopy("+522227448864")}
               >
                 (+52) 222 744 8864
               </p>
-              <p className={labelClass}>Email:</p>
+              <p className={labelClass}>{t("email")}</p>
               <p
                 className={copyableValueClass}
                 onClick={() => handleCopy("erletaco@outlook.com")}
@@ -83,14 +90,14 @@ export const Footer = () => {
             </div>
 
             <div className={styles.flankColumn}>
-              <h3 className={headingClass}>Menu</h3>
+              <h3 className={headingClass}>{t("menu")}</h3>
               {HERO_SECTIONS.map((section) => (
                 <p
                   key={section}
                   onClick={() => scrollTo(section)}
                   className={navLinkClass}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {tNav(section)}
                 </p>
               ))}
             </div>
