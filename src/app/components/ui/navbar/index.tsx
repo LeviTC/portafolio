@@ -84,9 +84,24 @@ export default function Navbar() {
   const handleIconClick = (url: string) => window.open(url);
 
   const switchLocale = (nextLocale: (typeof routing.locales)[number]) => {
-    router.replace(pathname, { locale: nextLocale });
+    if (nextLocale === locale) return;
+    const scrollY = window.scrollY;
+    sessionStorage.setItem("locale-scroll-y", String(scrollY));
+    router.replace(pathname, { locale: nextLocale, scroll: false });
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    const raw = sessionStorage.getItem("locale-scroll-y");
+    if (raw == null) return;
+    sessionStorage.removeItem("locale-scroll-y");
+    const scrollY = Number(raw);
+    if (Number.isNaN(scrollY)) return;
+
+    const restore = () => window.scrollTo(0, scrollY);
+    restore();
+    requestAnimationFrame(restore);
+  }, [locale]);
 
   const resumeHref = getResumeHref(locale);
 

@@ -18,6 +18,13 @@
     "title": "Experience",
     "items": [
       {
+        "title": "React & React Native Developer",
+        "company": "ZENTRO",
+        "startDate": "Apr 2026",
+        "endDate": "Present",
+        "description": "Developed mobile applications with React Native, implementing features, integrations, and performance improvements for digital products."
+      },
+      {
         "title": "Front-End Team Lead",
         "company": "B Life",
         "startDate": "Aug 2024",
